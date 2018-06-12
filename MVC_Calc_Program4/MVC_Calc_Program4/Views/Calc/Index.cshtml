@@ -1,0 +1,51 @@
+﻿@model MVC_Calc_Program4.Models.CalcM
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2></h2>
+<script>
+    $(document).ready(function () {
+        $("Button").click(function () {
+            var StrNumber = $(this).text();
+            if ($("#No1").val() == 0)
+                $("#No1").val("")
+            $("#No1").val($("#No1").val() + StrNumber);
+        });
+    });
+</script>
+<div>
+    <form action="#" method="post">
+
+        <input id="No1" type="text" name="No1" class="form-control" value="@Model.No1" />
+        <br />
+
+        <input type="hidden" name="No2" value="@Model.No2" />
+        <br />
+
+        <h2>@Model.Result</h2>
+
+        <br />
+
+        <input type="submit" name="Op" class="btn btn-success"  value="+" />
+        <input type="submit" name="Op" class="btn btn-success" value="-" />
+        <input type="submit" name="Op" class="btn btn-success" value="*" />
+        <input type="submit" name="Op" class="btn btn-success" value="/" />
+        <input type="submit" name="Op" class="btn btn-success" value="C" />
+
+    </form>
+    <button class="btn btn-default">1</button>
+    <button class="btn btn-default">2</button>
+    <button class="btn btn-default">3</button>
+    <br />
+    <button class="btn btn-default">4</button>
+    <button class="btn btn-default">5</button>
+    <button class="btn btn-default">6</button>
+    <br />
+    <button class="btn btn-default">7</button>
+    <button class="btn btn-default">8</button>
+    <button class="btn btn-default">9</button>
+    <br />
+    <button class="btn btn-default">0</button>
+</div>
+
